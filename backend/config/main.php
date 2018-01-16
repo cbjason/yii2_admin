@@ -36,7 +36,7 @@ return [
             //这里是允许访问的action
             //controller/action
             // * 表示允许所有
-            '*'
+            'site/*'
         ]
     ],
     'components' => [
@@ -98,6 +98,12 @@ return [
                 'dmstr\web\AdminLteAsset' => [
                     'skin' => 'skin-blue-light',
                 ],
+            ],
+            'assetMap' => [
+                // 添加菜单时下拉框异常，jquery v3.2.1 和 jQuery UI 1.12.1 版本冲突，jquery版本替换为2.1.4
+                // @https://stackoverflow.com/questions/37914869/jquery-ui-error-f-getclientrects-is-not-a-function
+                'jquery.js' => '@web/js/jquery/jquery-3.0.0.js',
+                'jquery.min.js' => '@web/js/jquery/jquery-3.0.0.min.js',
             ],
         ],
         'i18n' => [
