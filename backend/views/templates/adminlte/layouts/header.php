@@ -23,6 +23,26 @@ use yii\helpers\Html;
                         <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
                         <span class="hidden-xs"><?= Yii::$app->user->identity->username ?></span>
                     </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle"
+                                 alt="User Image"/>
+                            <p>
+                                <?= Yii::$app->user->identity->username ?>
+                                <small><?= date('Y-m-d H:i:s')?></small>
+                            </p>
+                        </li>
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-right">
+                                <?= Html::a(
+                                    'Sign out',
+                                    ['/site/logout'],
+                                    ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
+                                ) ?>
+                            </div>
+                        </li>
                 </li>
             </ul>
         </div>
