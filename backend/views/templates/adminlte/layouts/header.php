@@ -37,7 +37,7 @@ use yii\helpers\Html;
                         <li class="user-footer">
                             <div class="pull-right">
                                 <?= Html::a(
-                                    Yii::t('common', 'Logout'),
+                                    Yii::t('admin', 'Logout'),
                                     ['/site/logout'],
                                     ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
                                 ) ?>
