@@ -8,7 +8,7 @@ use yii\helpers\Html;
 
 <header class="main-header">
 
-    <?= Html::a('<span class="logo-mini">APP</span><span class="logo-lg">' . Yii::$app->name . '</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>
+    <?= Html::a('<span class="logo-mini">APP</span><span class="logo-lg">' . Yii::t('admin', 'Admin Manage') . '</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>
 
     <nav class="navbar navbar-static-top" role="navigation">
 
@@ -30,19 +30,20 @@ use yii\helpers\Html;
                                  alt="User Image"/>
                             <p>
                                 <?= Yii::$app->user->identity->username ?>
-                                <small><?= date('Y-m-d H:i:s')?></small>
+                                <small><?= date('Y-m-d H:i') ?></small>
                             </p>
                         </li>
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-right">
                                 <?= Html::a(
-                                    'Sign out',
+                                    Yii::t('common', 'Logout'),
                                     ['/site/logout'],
                                     ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
                                 ) ?>
                             </div>
                         </li>
+                    </ul>
                 </li>
             </ul>
         </div>

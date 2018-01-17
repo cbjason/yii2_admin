@@ -11,7 +11,9 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    "language" => "zh-CN",
+    'charset' => 'utf-8',
+    'language' => 'zh-CN',
+    'timeZone' => 'Asia/Shanghai',
     'modules' => [
         'admin' => [
             'class' => 'mdm\admin\Module',
@@ -112,7 +114,10 @@ return [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@backend/messages', // if advanced application, set @frontend/messages
                     'fileMap' => [
-                        //'main' => 'main.php',
+                        'common' => 'common.php',
+                        'admin' => 'admin.php',
+                        'acl' => 'acl.php',
+                        'upload' => 'upload.php',
                     ],
                 ],
             ],
