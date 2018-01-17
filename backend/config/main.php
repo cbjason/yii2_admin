@@ -112,7 +112,10 @@ return [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@backend/messages', // if advanced application, set @frontend/messages
                     'fileMap' => [
-                        //'main' => 'main.php',
+                        'common' => 'common.php',
+                        'admin' => 'admin.php',
+                        'acl' => 'acl.php',
+                        'upload' => 'upload.php',
                     ],
                 ],
             ],
