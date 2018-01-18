@@ -29,6 +29,7 @@ return array(
     'Create'                                                     => '创建',
     'Update'                                                     => '更新',
     'Delete'                                                     => '删除',
+    'Sure Delete?'                                               => '确定删除？',
 
     /* 用户 */
     'Users' => '用户管理',

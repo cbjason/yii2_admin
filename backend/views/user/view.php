@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use backend\models\User;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\User */
@@ -19,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a(Yii::t('admin', 'Delete'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => Yii::t('admin', 'Sure Delete?'),
                 'method' => 'post',
             ],
         ]) ?>
@@ -35,28 +36,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'status',
                 'value' =>
                     function ($model) {
-                        if ($model->status == 10) {
-                            return '正常';
-                        } else {
-                            return '异常';
-                        }
+                        return User::dropDown('status', $model->status);
                     },
                 'headerOptions' => ['width' => '100'],
             ],
             [
                 'attribute' => 'created_at',
-                'value' =>
-                    function ($model) {
-                        return date('Y-m-d H:i:s', $model->updated_at);
-                    },
+                'format'=>['date', 'php:Y-m-d H:i:s'],
                 'headerOptions' => ['width' => '170'],
             ],
             [
                 'attribute' => 'updated_at',
-                'value' =>
-                    function ($model) {
-                        return date('Y-m-d H:i:s', $model->updated_at);
-                    },
+                'format'=>['date', 'php:Y-m-d H:i:s'],
                 'headerOptions' => ['width' => '170'],
             ],
         ],

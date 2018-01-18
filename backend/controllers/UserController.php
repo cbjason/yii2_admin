@@ -67,7 +67,6 @@ class UserController extends Controller
         $model = new User();
 
         if ($model->load(Yii::$app->request->post())) {
-            //TODO 判断密码长度
             $model->setPassword($_POST['User']['password_hash']);
             $model->generateAuthKey();
             $model->created_at = time();

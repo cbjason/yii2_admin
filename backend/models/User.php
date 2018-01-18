@@ -58,21 +58,25 @@ class User extends \common\models\User
         ];
     }
 
-    /**
-     * Generates password hash from password and sets it to the model
-     *
-     * @param string $password
-     */
-    public function setPassword($password)
+    public static function getStatusList($status = null)
     {
-        $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+        $list = ['10' => '显示', '0' => '隐藏'];
+        return isset($status) ? $list[$status] : $list;
     }
 
-    /**
-     * Generates "remember me" authentication key
-     */
-    public function generateAuthKey()
+    public static function dropDown($column, $value = null)
     {
-        $this->auth_key = Yii::$app->security->generateRandomString();
+        $dropDownList = [
+            //有新的字段要实现下拉规则，可像下面这样进行添加
+            'status' => [
+                '10' => '显示',
+                '0' => '隐藏',
+            ],
+        ];
+        if ($value !== null) {
+            return array_key_exists($column, $dropDownList) ? $dropDownList[$column][$value] : false;
+        } else {
+            return array_key_exists($column, $dropDownList) ? $dropDownList[$column] : false;
+        }
     }
 }

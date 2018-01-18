@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use backend\models\User;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\UserSearch */
@@ -24,35 +26,39 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
 //            ['class' => 'yii\grid\SerialColumn'],
-            'id',
+            [
+                'attribute' => 'id',
+                'headerOptions' => ['width' => '80'],
+            ],
             'username',
             'email:email',
             [
                 'attribute' => 'status',
                 'value' =>
                     function ($model) {
-                        if ($model->status == 10) {
-                            return '正常';
-                        } else {
-                            return '异常';
-                        }
+                        return User::dropDown('status', $model->status);
                     },
-                'headerOptions' => ['width' => '100'],
+                'filter' => User::dropDown('status'),
+                'headerOptions' => ['width' => '80'],
             ],
             [
                 'attribute' => 'created_at',
-                'value' =>
-                    function ($model) {
-                        return date('Y-m-d H:i:s', $model->updated_at);
-                    },
-                'headerOptions' => ['width' => '170'],
+                'format' => ['date', 'php:Y-m-d H:i:s'],
+                'headerOptions' => ['width' => '240'],
+                'filter' => DatePicker::widget([
+                    'name' => 'UserSearch[created_at]',
+                    'options' => ['placeholder' => ''],
+                    'value' => '',
+                    'convertFormat' => true,
+                    'pluginOptions' => [
+                        'format' => 'yyyy-MM-dd',
+                        'todayHighlight' => true
+                    ]
+                ]),
             ],
             [
                 'attribute' => 'updated_at',
-                'value' =>
-                    function ($model) {
-                        return date('Y-m-d H:i:s', $model->updated_at);
-                    },
+                'format'=>['date', 'php:Y-m-d H:i:s'],
                 'headerOptions' => ['width' => '170'],
             ],
             ['class' => 'yii\grid\ActionColumn'],
