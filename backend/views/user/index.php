@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter' => DatePicker::widget([
                     'name' => 'UserSearch[created_at]',
                     'options' => ['placeholder' => ''],
-                    'value' => '',
+                    'value' => isset($_GET['UserSearch']['created_at']) ? $_GET['UserSearch']['created_at'] : null,
                     'convertFormat' => true,
                     'pluginOptions' => [
                         'format' => 'yyyy-MM-dd',
