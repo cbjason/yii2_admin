@@ -22,7 +22,7 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error', 'captcha'],
                         'allow' => true,
                     ],
                     [
@@ -49,6 +49,13 @@ class SiteController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
+            ],
+            'captcha' => [
+                'class' => 'yii\captcha\CaptchaAction',
+                'height' => 45,
+                'width' => 100,
+                'maxLength' => 4,
+                'minLength' => 4
             ],
         ];
     }

@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use yii\captcha\Captcha;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
@@ -38,6 +39,15 @@ $fieldOptions2 = [
             ->field($model, 'password', $fieldOptions2)
             ->label(false)
             ->passwordInput(['placeholder' => $model->getAttributeLabel('password')]) ?>
+
+        <?= $form
+            ->field($model, 'verifyCode')
+            ->label(false)
+            ->widget(Captcha::className(), [
+                'imageOptions'=>['alt'=>'点击换图','title'=>'点击换图', 'style'=>'cursor:pointer'],
+                'template' => '<div class="row"><div class="col-lg-6">{input}</div><div class="col-lg-3">{image}</div></div>',
+                'options' => ['placeholder' => $model->getAttributeLabel('verifyCode'), 'class' => 'form-control'],
+            ]) ?>
 
         <div class="row">
             <div class="col-xs-8">
