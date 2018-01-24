@@ -60,7 +60,7 @@ class User extends \common\models\User
 
     public static function getStatusList($status = null)
     {
-        $list = ['10' => '显示', '0' => '隐藏'];
+        $list = ['1' => '显示', '0' => '隐藏'];
         return isset($status) ? $list[$status] : $list;
     }
 
