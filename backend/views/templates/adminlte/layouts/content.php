@@ -35,9 +35,9 @@ use dmstr\widgets\Alert;
     </section>
 </div>
 
-<footer class="main-footer">
+<!--<footer class="main-footer">
     <strong>Copyright &copy; 2014-2018 Joey-Ch</strong> All rights reserved.
-</footer>
+</footer>-->
 
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">

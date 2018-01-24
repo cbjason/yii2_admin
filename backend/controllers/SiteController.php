@@ -67,7 +67,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $data['serverSoft'] = $_SERVER['SERVER_SOFTWARE'];
+        $data['serverOs'] = PHP_OS;
+        $data['phpVersion'] = PHP_VERSION;
+        $data['fileUpload'] = ini_get('file_uploads') ? ini_get('upload_max_filesize') : Yii::t('admin', 'Forbidden to upload');
+        return $this->render('index', ['server' => $data]);
     }
 
     /**
