@@ -69,7 +69,7 @@ class User extends \common\models\User
         $dropDownList = [
             //有新的字段要实现下拉规则，可像下面这样进行添加
             'status' => [
-                '10' => '显示',
+                '1' => '显示',
                 '0' => '隐藏',
             ],
         ];
