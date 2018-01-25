@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 /* @var $server yii\web\View */
 
-$this->title = '首页';
+$this->title = Yii::$app->setting->get('siteName');
 ?>
 <style type="text/css">
     td {
