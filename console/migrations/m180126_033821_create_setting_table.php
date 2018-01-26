@@ -5,8 +5,9 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `setting`.
  */
-class m180124_023704_create_setting_table extends Migration
+class m180126_033821_create_setting_table extends Migration
 {
+    const TABLE_NAME = '{{%setting}}';
     /**
      * @inheritdoc
      */
@@ -14,9 +15,9 @@ class m180124_023704_create_setting_table extends Migration
     {
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
-            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
-        $this->createTable('{{%setting}}', [
+        $this->createTable(self::TABLE_NAME, [
             'key' => $this->string(255)->notNull()->unique(),
             'value' => $this->text()->notNull(),
         ], $tableOptions);
@@ -27,6 +28,6 @@ class m180124_023704_create_setting_table extends Migration
      */
     public function down()
     {
-        $this->dropTable('{{%setting}}');
+        $this->dropTable(self::TABLE_NAME);
     }
 }
