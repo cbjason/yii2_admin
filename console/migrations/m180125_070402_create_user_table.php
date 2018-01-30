@@ -32,6 +32,17 @@ class m180125_070402_create_user_table extends Migration
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
+
+        $this->insert(self::TABLE_NAME, [
+            'username' => 'admin',
+            'auth_key' => 'rH7vUm75ov_5K0MZcIKfiPXJ2M0YlJvm',
+            'password_hash' => '$2y$13$o9qCbbh0q95HiAoL0NrFpe2ZVO.Bp6SLd1xFVLMRNaTInVsDzGEjW',
+            'password_reset_token' => NULL,
+            'email' => 'admin@test.com',
+            'status' => 1,
+            'created_at' => '1515913743',
+            'updated_at' => '1515913743', 'last_login_at' => NULL, 'this_login_at' => NULL, 'last_login_ip4' => NULL, 'this_login_ip4' => NULL, 'email' => '00000000@00.00', 'role' => '1', 'job' => NULL, 'see_unit' => '1', 'own_unit' => NULL, 'profile' => NULL, 'status' => '0', 'is_backend' => '0', 'avatar' => NULL
+        ]);
     }
 
     /**
