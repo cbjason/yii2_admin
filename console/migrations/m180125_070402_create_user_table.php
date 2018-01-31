@@ -41,7 +41,7 @@ class m180125_070402_create_user_table extends Migration
             'email' => 'admin@test.com',
             'status' => 1,
             'created_at' => '1515913743',
-            'updated_at' => '1515913743', 'last_login_at' => NULL, 'this_login_at' => NULL, 'last_login_ip4' => NULL, 'this_login_ip4' => NULL, 'email' => '00000000@00.00', 'role' => '1', 'job' => NULL, 'see_unit' => '1', 'own_unit' => NULL, 'profile' => NULL, 'status' => '0', 'is_backend' => '0', 'avatar' => NULL
+            'updated_at' => '1515913743',
         ]);
     }
 
