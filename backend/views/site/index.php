@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 /* @var $server yii\web\View */
 
-$this->title = 'Yii2Demo';
+$this->title = Yii::t('admin', 'Admin Manage');
 ?>
 <style type="text/css">
     td {
