@@ -21,6 +21,8 @@ class m180126_033821_create_setting_table extends Migration
             'key' => $this->string(255)->notNull()->unique(),
             'value' => $this->text()->notNull(),
         ], $tableOptions);
+
+        $this->insert(self::TABLE_NAME, ['key' => 'siteName', 'value' => 'Yii2Demo']);
     }
 
     /**

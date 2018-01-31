@@ -3,7 +3,7 @@
 /* @var $this yii\web\View */
 /* @var $server yii\web\View */
 
-$this->title = Yii::$app->setting->get('siteName');
+$this->title = 'Yii2Demo';
 ?>
 <style type="text/css">
     td {
