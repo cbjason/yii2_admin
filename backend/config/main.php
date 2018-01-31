@@ -88,13 +88,6 @@ return [
             "class" => 'yii\rbac\DbManager', //这里记得用单引号而不是双引号
             "defaultRoles" => ["guest"],
         ],
-        'view' => [
-            'theme' => [
-                'pathMap' => [
-                    '@app/views' => '@app/views/templates/adminlte'
-                ],
-            ],
-        ],
         'assetManager' => [
             'bundles' => [
                 'dmstr\web\AdminLteAsset' => [
