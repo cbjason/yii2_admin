@@ -19,15 +19,6 @@ return [
             'class' => 'mdm\admin\Module',
             'mainLayout' => '@app/views/layouts/main.php',
         ],
-        'gridview' => [
-            'class' => '\kartik\grid\Module',
-        ],
-        'datecontrol' => [
-            'class' => '\kartik\datecontrol\Module',
-        ],
-        'treemanager' => [
-            'class' => '\kartik\tree\Module',
-        ]
     ],
     "aliases" => [
         "@mdm/admin" => "@vendor/mdmsoft/yii2-admin",
